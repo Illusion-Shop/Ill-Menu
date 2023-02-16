@@ -1,11 +1,12 @@
-name: Ill-Template #TODO
-main: net.illusion.template.TemplatePlugin #TODO
+name: Ill-Menu #TODO
+main: net.illusion.menu.MenuPlugin #TODO
 author: Illusion
-description: 템플릿 플러그인
+description: Menu
 website: https://discord.gg/illusion-shop
 
 version: 1.0
 api-version: 1.13
 
 commands:
+  메뉴:
 

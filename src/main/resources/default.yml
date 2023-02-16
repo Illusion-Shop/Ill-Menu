@@ -1,0 +1,64 @@
+size: 6 #GUI 사이즈
+menu_title: "메뉴" # 메뉴 타이틀
+
+open_settings:
+  - '[sound] block_chest_open'
+
+items:
+  '1': #가상 이름
+    material: GRASS_BLOCK # 아이템이름
+    slot: 0 # 슬롯
+    custommodeldata: 1 # 커스텀 모델 데이터 번호
+    display_name: "테스트" # 아이템 이름
+    lore: # 아이템 로어
+      - ""
+      - "&e→ &f테스트 로어 입니다!"
+      - ""
+    left_click_commands: # 좌클릭시 커맨드
+    - '[player] say 1' # 좌클릭시 플레이어한테 명령어를 실행시킴
+    - '[sound] ENTITY_ITEM_PICKUP' # 좌클릭시 들리는 소리
+    right_click_commands: # 우클릭시 커맨드
+    - '[player] say 2'
+    - '[sound] ENTITY_ITEM_PICKUP'
+
+  '2':
+    material: CLAY_BALL # 아이템이름
+    slot: 1 # 슬롯
+    display_name: "테스트2" # 아이템 이름
+    lore: # 아이템 로어
+      - ""
+      - "&e→ &f테스트2 로어 입니다!"
+      - ""
+    left_click_commands: # 좌클릭시 커맨드
+      - '[player] say 3' # 좌클릭시 플레이어한테 명령어를 실행시킴
+      - '[sound] ENTITY_ITEM_PICKUP' # 좌클릭시 들리는 소리
+    right_click_commands: # 우클릭시 커맨드
+      - '[player] say 4'
+      - '[sound] ENTITY_ITEM_PICKUP'
+  '3':
+    custom: "playerhead"
+    material: CLAY_BALL # 아이템 이름
+    slot: 2 # 슬롯
+    custommodeldata: 1 # 커스텀 모델 데이터
+    displayer_name: "플레이어 정보" # 플레이어 정보
+    lore: # 아이템 로어
+      - ""
+      - "&e→ &f자신의 정보를 확인합니다."
+      - ""
+  '4':
+    material: CLAY_BALL # 아이템이름
+    slots: # 슬롯
+      - 5
+      - 6
+      - 7
+    display_name: "테스트2" # 아이템 이름
+    lore: # 아이템 로어
+      - ""
+      - "&e→ &f테스트2 로어 입니다!"
+      - ""
+    left_click_commands: # 좌클릭시 커맨드
+      - '[player] say 3' # 좌클릭시 플레이어한테 명령어를 실행시킴
+      - '[sound] ENTITY_ITEM_PICKUP' # 좌클릭시 들리는 소리
+    right_click_commands: # 우클릭시 커맨드
+      - '[player] say 4'
+      - '[sound] ENTITY_ITEM_PICKUP'

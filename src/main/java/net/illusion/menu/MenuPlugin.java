@@ -1,17 +1,22 @@
-package net.illusion.template;
+package net.illusion.menu;
 
 import net.illusion.core.data.Config;
-import net.illusion.template.cmd.TemplateCmd;
+import net.illusion.menu.cmd.MenuCmd;
+import net.illusion.menu.cmd.MenuCmdTab;
+import net.illusion.menu.event.MenuListener;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
-public class TemplatePlugin extends JavaPlugin {
+public class MenuPlugin extends JavaPlugin {
 
     private final Logger log = Bukkit.getLogger();
-    private static TemplatePlugin plugin;
+    private static MenuPlugin plugin;
     public static Config config;
+
+    public static String prefix;
 
     @Override
     public void onEnable() {
@@ -29,11 +34,15 @@ public class TemplatePlugin extends JavaPlugin {
         config.setPlugin(this);
         config.loadDefualtConfig();
 
+        prefix = ChatColor.translateAlternateColorCodes('&', config.getString("prefix"));
+
         // EVENT
         // TODO
+        Bukkit.getPluginManager().registerEvents(new MenuListener(),this);
 
         // COMMAND
-        getCommand("").setExecutor(new TemplateCmd()); // TODO
+        getCommand("메뉴").setExecutor(new MenuCmd());
+        getCommand("메뉴").setTabCompleter(new MenuCmdTab());
     }
 
     @Override
@@ -41,7 +50,7 @@ public class TemplatePlugin extends JavaPlugin {
         // TODO
     }
 
-    public static TemplatePlugin getPlugin() {
+    public static MenuPlugin getPlugin() {
         return plugin;
     }
 }
